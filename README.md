@@ -1,5 +1,5 @@
-# mmc-auto-test
-Repository for the automated testing (CodeceptJS) of mmc.
+# typing-hacker
+A lazy tool that sends lazy people to automate typing tests
 
 ### 初期準備
 1. `npm install`を実行する
