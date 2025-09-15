@@ -129,6 +129,27 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-output
+# Test outputs and reports
+output/
+reports/
+allure-results/
+allure-report/
+test-results/
+playwright-report/
+
+# Screenshots and videos
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webm
+*.mp4
+
+# IDE files
+.vscode/
+.idea/
 .history
 .DS_Store
+
+# CodeceptJS specific
+steps.d.ts.bak
