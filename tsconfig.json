@@ -19,7 +19,7 @@
     "resolveJsonModule": true,
 
     // Type Checking
-    "strict": false,
+    "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": false,
     "noImplicitReturns": false,

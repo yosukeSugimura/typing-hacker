@@ -34,7 +34,7 @@ Copy `.env.example` to `.env` and customize:
 cp .env.example .env
 ```
 
-### Key Settings:
+### Key Settings
 
 - `TYPING_SPEED=50` - Words per minute (30-100+)
 - `TYPO_PROBABILITY=0.01` - Error rate (0.0-0.1)
@@ -61,7 +61,7 @@ npm run validate          # Check code quality
 
 ## Troubleshooting
 
-### Common Issues:
+### Common Issues
 
 **"Browser not found":**
 
@@ -80,7 +80,7 @@ npm run build
 - Check your `.env` file exists
 - Restart the test after making changes
 
-### Debug Mode:
+### Debug Mode
 
 ```bash
 DEBUG=true npm run test:debug
@@ -94,7 +94,7 @@ This will:
 
 ## File Structure
 
-```
+```text
 typing-hacker/
 ├── tests/              # Test scenarios
 ├── pages/              # Page objects

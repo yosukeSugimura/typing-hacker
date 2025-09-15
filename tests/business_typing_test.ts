@@ -64,7 +64,8 @@ Scenario('デフォルト設定でビジネスタイピングエクササイズ�
             });
           }
         } catch (error) {
-          I.logWithEmoji('warn', `Error in round ${index + 1}: ${error.message}`);
+          const errorMessage = error instanceof Error ? error.message : String(error);
+          I.logWithEmoji('warn', `Error in round ${index + 1}: ${errorMessage}`);
         }
 
         I.wait(0.8);
@@ -73,7 +74,8 @@ Scenario('デフォルト設定でビジネスタイピングエクササイズ�
 
     I.logWithEmoji('success', `Completed ${rounds} rounds of typing`);
   } catch (error) {
-    I.logWithEmoji('error', `Test failed: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    I.logWithEmoji('error', `Test failed: ${errorMessage}`);
     await I.takeTimestampedScreenshot('business_typing_error');
     throw error;
   }
@@ -115,7 +117,8 @@ Scenario('高速タイピングテスト (80+ WPM)', async ({ I }) => {
             });
           }
         } catch (error) {
-          I.logWithEmoji('warn', `Error in high-speed round ${round + 1}: ${error.message}`);
+          const errorMessage = error instanceof Error ? error.message : String(error);
+          I.logWithEmoji('warn', `Error in high-speed round ${round + 1}: ${errorMessage}`);
         }
 
         I.wait(0.5); // Shorter wait between sentences
@@ -124,7 +127,8 @@ Scenario('高速タイピングテスト (80+ WPM)', async ({ I }) => {
 
     I.logWithEmoji('success', 'High-speed typing test completed');
   } catch (error) {
-    I.logWithEmoji('error', `High-speed test failed: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    I.logWithEmoji('error', `High-speed test failed: ${errorMessage}`);
     await I.takeTimestampedScreenshot('high_speed_typing_error');
     throw error;
   }
@@ -172,7 +176,8 @@ Scenario('エラー復旧とリトライ機構をテストする', async ({ I })
         gameStarted = true;
         break;
       } catch (error) {
-        I.logWithEmoji('warn', `Game start attempt ${attempt} failed: ${error.message}`);
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        I.logWithEmoji('warn', `Game start attempt ${attempt} failed: ${errorMessage}`);
         if (attempt === maxRetries) {
           throw error;
         }
@@ -194,7 +199,8 @@ Scenario('エラー復旧とリトライ機構をテストする', async ({ I })
 
             I.wait(0.8);
           } catch (error) {
-            I.logWithEmoji('warn', `Error in recovery test round ${round + 1}: ${error.message}`);
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            I.logWithEmoji('warn', `Error in recovery test round ${round + 1}: ${errorMessage}`);
           }
         }
       });
@@ -202,7 +208,8 @@ Scenario('エラー復旧とリトライ機構をテストする', async ({ I })
       I.logWithEmoji('success', 'Error recovery test completed successfully');
     }
   } catch (error) {
-    I.logWithEmoji('error', `Error recovery test failed: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    I.logWithEmoji('error', `Error recovery test failed: ${errorMessage}`);
     await I.takeTimestampedScreenshot('error_recovery_failure');
     throw error;
   }
